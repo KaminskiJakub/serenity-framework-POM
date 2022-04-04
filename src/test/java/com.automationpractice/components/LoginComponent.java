@@ -15,6 +15,9 @@ public class LoginComponent extends PageObject {
     @FindBy(id = "SubmitLogin")
     private WebElementFacade signInButton;
 
+    @FindBy(xpath = "//div[@class='alert alert-danger']")
+    private WebElementFacade invalidEmailOrPasswordError;
+
     public void typeEmailAddress(String email) {
         emailField.waitUntilClickable().sendKeys(email);
     }
@@ -25,5 +28,17 @@ public class LoginComponent extends PageObject {
 
     public void clickSubmitButton() {
         signInButton.waitUntilClickable().click();
+    }
+
+    public boolean isErrorMessageVisible() {
+        return invalidEmailOrPasswordError.isVisible();
+    }
+
+    public boolean isEmailFieldVisible() {
+        return emailField.isVisible();
+    }
+
+    public boolean isPasswordFieldVisible() {
+        return passwordField.isVisible();
     }
 }

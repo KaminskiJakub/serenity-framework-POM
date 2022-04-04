@@ -25,4 +25,9 @@ public class HeaderSteps {
         assertThat(headerComponent.isUsernameVisible()).isTrue();
         assertThat(headerComponent.getUsernameText()).isEqualTo(Constants.USERNAME);
     }
+
+    @Step
+    public void signOut() {
+        headerComponent.clickSignOutButton();
+    }
 }
