@@ -8,3 +8,4 @@ Feature: Sign in
     When I go to sign in section
     And I sign in with my credentials on login page
     Then I am logged in
+    And I am on my account page
